@@ -1,0 +1,5 @@
+Ejercicio 3 - Bootstrap + Sass
+dist/custom.css ya viene compilado: abre index.html directamente.
+Para recompilar tras editar src/custom.scss:
+  npm install
+  npm run build     (equivale a: npx sass --load-path=node_modules src/custom.scss dist/custom.css)

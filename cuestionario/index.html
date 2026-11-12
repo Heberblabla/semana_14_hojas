@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cuestionario resuelto - Bootstrap</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+<main class="container py-5" style="max-width:860px">
+<a href="../index.html" class="btn btn-link mb-2">← Menú</a>
+<h1 class="h3 mb-4">Cuestionario resuelto</h1>
+<div class="accordion shadow-sm" id="acc">
+ <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#q1">1. ¿Qué es Bootstrap y qué significa mobile-first?</button></h2>
+  <div id="q1" class="accordion-collapse collapse show" data-bs-parent="#acc"><div class="accordion-body">
+   <p>Bootstrap es un framework de código abierto para crear interfaces web responsivas. Nació en Twitter y se publicó como proyecto abierto en 2011. Incluye <strong>hojas de estilo CSS</strong> (rejilla, tipografía, utilidades), <strong>componentes</strong> listos (navbar, card, modal, formularios, alert, badge…) y <strong>componentes JavaScript</strong> (bundle con Popper). La versión 5.3 ya no depende de jQuery y ofrece variables CSS y modo oscuro.</p>
+   <p class="mb-0"><em>Mobile-first</em> significa que los estilos base se escriben para pantallas pequeñas y luego se amplían a pantallas mayores mediante <em>breakpoints</em> (sm, md, lg, xl, xxl) con prefijos como <code>col-md-6</code>. Así el diseño parte de lo esencial y crece, en lugar de reducirse.</p></div></div></div>
+ <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q2">2. La rejilla de 12 columnas y col-12 col-md-6 col-lg-4</button></h2>
+  <div id="q2" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">
+   <p>La rejilla usa Flexbox y divide cada <code>row</code> en 12 columnas; cada <code>col-*</code> indica cuántas ocupa, dentro de un <code>container</code> que limita y centra el contenido. Si las columnas de una fila suman más de 12, las sobrantes pasan a la línea siguiente.</p>
+   <p>Interpretación de <code>col-12 col-md-6 col-lg-4</code>:</p>
+   <ul class="mb-0"><li><strong>Móvil (&lt; 768 px):</strong> col-12 → 12/12 = <strong>1 columna</strong> por fila.</li>
+   <li><strong>Tableta (≥ 768 px):</strong> col-md-6 → 6/12 = <strong>2 columnas</strong> por fila.</li>
+   <li><strong>Laptop (≥ 992 px):</strong> col-lg-4 → 4/12 = <strong>3 columnas</strong> por fila.</li></ul></div></div></div>
+ <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q3">3. ¿Para qué sirve bootstrap.bundle.min.js?</button></h2>
+  <div id="q3" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">
+   Contiene el JavaScript de los componentes interactivos de Bootstrap e incluye <strong>Popper</strong> (posicionamiento de menús desplegables, tooltips y popovers). Lee atributos como <code>data-bs-toggle</code> y <code>data-bs-target</code>. Sin él dejan de funcionar, por ejemplo, el <strong>menú hamburguesa colapsable de la navbar</strong> (Ejercicio 1), los <strong>modal</strong>, los dropdown, el carrusel y el offcanvas. Si solo se usan rejilla, tarjetas y botones, basta el CSS.</div></div></div>
+ <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q4">4. Ventajas, limitaciones y cómo evitar que todos los sitios se vean igual</button></h2>
+  <div id="q4" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">
+   <p><strong>Ventajas:</strong> (1) rapidez, con componentes y rejilla listos; (2) diseño responsivo mobile-first incorporado; (3) documentación extensa, comunidad grande y consistencia entre páginas y equipos.</p>
+   <p><strong>Limitaciones:</strong> (1) aspecto reconocible si no se personaliza; (2) peso, porque se descargan estilos no usados si no se compila una versión propia (otras: marcado extenso, especificidad al sobrescribir).</p>
+   <p class="mb-0"><strong>Cómo diferenciarse:</strong> personalizar con variables <code>--bs-*</code> o Sass (<code>$primary</code>, <code>$border-radius</code>, tipografía), definir una paleta y fuentes propias, añadir CSS propio cargado después de Bootstrap y compilar solo los módulos necesarios.</p></div></div></div>
+ <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#q5">5. Variables --bs-* frente a Sass</button></h2>
+  <div id="q5" class="accordion-collapse collapse" data-bs-parent="#acc"><div class="accordion-body">
+   <div class="table-responsive"><table class="table table-bordered align-middle mb-3"><thead class="table-light"><tr><th></th><th>Variables CSS (--bs-*)</th><th>Sass</th></tr></thead><tbody>
+    <tr><th>Cómo</th><td>Se sobrescriben en una hoja propia cargada después de Bootstrap.</td><td>Se redefinen variables (<code>$primary</code>) antes de <code>@import</code> y se compila un CSS propio.</td></tr>
+    <tr><th>Herramientas</th><td>Ninguna; funciona en el navegador y en tiempo de ejecución.</td><td>Requiere Node.js, npm y compilar en cada cambio.</td></tr>
+    <tr><th>Alcance</th><td>Un componente, una sección o un tema (p. ej. <code>data-bs-theme</code>).</td><td>Todo el sistema de diseño; permite incluir solo los módulos necesarios (menor peso).</td></tr></tbody></table></div>
+   <strong>Cuándo:</strong> las variables CSS convienen para ajustes rápidos y puntuales con CDN; Sass conviene en proyectos que requieren un tema completo y coherente y optimizar el CSS final.</div></div></div>
+</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

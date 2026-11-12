@@ -1,0 +1,6 @@
+{
+  "name": "ej3",
+  "version": "1.0.0",
+  "scripts": { "build": "sass --load-path=node_modules src/custom.scss dist/custom.css" },
+  "dependencies": { "bootstrap": "^5.3.3", "sass": "^1.77.0" }
+}

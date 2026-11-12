@@ -1,0 +1,7 @@
+// 1. Variables propias (antes de importar Bootstrap)
+$primary: #0e7c70;
+$border-radius: 0.75rem;
+$font-family-sans-serif: "Segoe UI", Arial, sans-serif;
+
+// 2. Importar Bootstrap completo
+@import "bootstrap/scss/bootstrap";
